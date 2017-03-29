@@ -12,6 +12,7 @@ import {
   View,
   ListView
 } from 'react-native';
+import OrderRow from './app/components/OrderRow/OrderRow';
 
 export default class uaifood extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ export default class uaifood extends Component {
         <View style={styles.container}>
           <ListView
             dataSource={this.state.dataSource}
-            renderRow={(order) => <Text>{order.by} está pedindo {order.restaurant}</Text>}
+            renderRow={(order) => <OrderRow order={order} />}
           />
         </View>
       );
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    width: '100%'
   },
   name: {
     fontSize: 20,
