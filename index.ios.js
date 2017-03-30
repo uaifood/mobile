@@ -42,6 +42,9 @@ export default class uaifood extends Component {
     } else {
       return (
         <View style={styles.container}>
+        <View style={ styles.header}>
+          <Text style={ styles.bar}> uaiFood (BH) </Text>
+        </View>
           <ListView
             dataSource={this.state.dataSource}
             renderRow={(order) => <OrderRow order={order} />}
@@ -58,6 +61,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%'
+  },
+  header: {
+    width: '100%',
+    height: 65,
+    backgroundColor: '#fa8072'
+  },
+  bar: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#f0ffff',
+    textAlign: 'center',
+    margin: 30,
   },
   name: {
     fontSize: 20,
