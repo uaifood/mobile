@@ -13,6 +13,7 @@ import {
   ListView
 } from 'react-native';
 import OrderRow from './app/components/OrderRow/OrderRow';
+import LoadingOrderRow from './app/components/LoadingOrderRow/LoadingOrderRow';
 
 export default class uaifood extends Component {
   constructor(props) {
