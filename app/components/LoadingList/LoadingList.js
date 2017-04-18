@@ -18,7 +18,7 @@ export default class LoadingList extends Component {
   render() {
     return (
       <View style={styles.row}>
-        <ListView
+        <ListView scrollEnabled={false}
           dataSource={this.state.dataSource}
           renderRow={(teste) => <LoadingOrderRow />}
         />
