@@ -23,7 +23,7 @@ export default class OrderDetails extends Component {
         />
         <View>
           <Text numberOfLines={1} ellipsizeMode= 'tail' style={styles.owner}>{order.by} está pedindo</Text>
-          <Text style={styles.restaurant}>{order.restaurant}</Text>
+          <Text style={styles.restaurant}>{order.restaurantId.name}</Text>
         </View>
       </View>
     );
