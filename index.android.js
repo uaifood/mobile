@@ -5,15 +5,14 @@
  */
 
 import React, { Component } from 'react';
-import App from './app/app.js'
-import {
-  AppRegistry
-} from 'react-native';
+import { AppRegistry } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import OrderDetails from './app/components/OrderDetails/OrderDetails.js';
+import OrderList from './app/components/OrderList/OrderList.js';
 
-export default class uaifood extends Component {
-  render() {
-    return <App></App>
-  }
-}
+const uaifood = StackNavigator({
+  OrderList: { screen: OrderList },
+  OrderDetails: { screen: OrderDetails }
+});
 
 AppRegistry.registerComponent('uaifood', () => uaifood);
