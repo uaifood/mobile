@@ -17,6 +17,9 @@ import OrderRow from '../OrderRow/OrderRow';
 import LoadingList from '../LoadingList/LoadingList';
 
 export default class OrderList extends Component {
+  static navigationOptions = {
+    header: null
+  };
   constructor(props) {
     super(props);
     console.log(props.navigator);
@@ -36,6 +39,7 @@ export default class OrderList extends Component {
       })
   }
   render() {
+    const { navigate } = this.props.navigation;
     if (this.state.isLoading) {
       return (
         <View style={styles.container}>
@@ -49,8 +53,7 @@ export default class OrderList extends Component {
             dataSource={this.state.dataSource}
             renderRow={(order) =>
                <TouchableHighlight onPress={() => {
-                 console.log('Click');
-                this.props.navigator.push(this.props.routes[1]);
+                 navigate('OrderDetails', { order: order })
                }}>
                 <View>
                   <OrderRow order={order} />

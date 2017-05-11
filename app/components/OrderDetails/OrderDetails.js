@@ -7,8 +7,13 @@ import {
 } from 'react-native';
 
 export default class OrderDetails extends Component {
+  static navigationOptions = ({navigation}) => ({
+    title: navigation.state.params.order.by
+  });
   render() {
-    const order = this.props.order;
+    const { goBack } = this.props.navigation;
+
+    const order = this.props.navigation.state.params.order;
     return (
       <View style={styles.row}>
         <Text>Detalhes do pedido</Text>
