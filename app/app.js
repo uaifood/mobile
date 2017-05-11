@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-// Please use the "app.js" file to load the app
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -16,10 +8,10 @@ import {
   Navigator,
   TouchableHighlight
 } from 'react-native';
-import OrderRow from './app/components/OrderRow/OrderRow';
-import OrderList from './app/components/OrderList/OrderList';
+import OrderRow from './components/OrderRow/OrderRow';
+import OrderList from './components/OrderList/OrderList';
 
-export default class uaifood extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props)
   }
@@ -43,6 +35,4 @@ export default class uaifood extends Component {
       />
     );
   }
-};
-
-AppRegistry.registerComponent('uaifood', () => uaifood);
+}
