@@ -26,7 +26,7 @@ export default class OrderList extends Component {
       isLoading: true
     }
 
-    fetch('https://api.myjson.com/bins/7qj6n')
+    fetch('https://uaifood-api.herokuapp.com/0.1/orders')
       .then((response) => response.json())
       .then((responseData) => {
         this.setState({
