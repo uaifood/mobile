@@ -10,10 +10,12 @@ import {
   ListView,
   TouchableHighlight
 } from 'react-native';
+
 import PropTypes from 'prop-types';
 import OrderRow from '../OrderRow/OrderRow';
 import LoadingList from '../LoadingList/LoadingList';
 import { OrderListStyle } from './OrderList.style';
+import TabBar from '../TabBar/TabBar';
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 

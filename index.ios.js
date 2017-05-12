@@ -4,7 +4,7 @@
  * @flow
  */
 import { AppRegistry } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 import OrderDetails from './app/components/OrderDetails/OrderDetails.js';
 import OrderList from './app/components/OrderList/OrderList.js';
 
@@ -13,4 +13,14 @@ const uaifood = StackNavigator({
 	OrderDetails: { screen: OrderDetails }
 });
 
+const uaifoodTab = TabNavigator({
+  OrderList: { screen: OrderList, },
+  OrderDetails: { screen: OrderDetails, },
+}, {
+  tabBarOptions: {
+    activeTintColor: '#e91e63',
+  },
+});
+
 AppRegistry.registerComponent('uaifood', () => uaifood);
+AppRegistry.registerComponent('uaifoodTab', () => uaifoodTab);
