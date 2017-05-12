@@ -16,7 +16,7 @@ export default class OrderRow extends Component {
           style={styles.thumbnail}
           source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
         />
-        <View>
+        <View style={styles.textContainer}>
           <Text numberOfLines={1} ellipsizeMode= 'tail' style={styles.owner}>{order.by} está pedindo</Text>
           <Text style={styles.restaurant}>{order.restaurantId.name}</Text>
         </View>
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#EEE',
     width: '100%',
-
   },
   thumbnail: {
     width: 50,
@@ -41,11 +40,15 @@ const styles = StyleSheet.create({
     marginRight: 10,
     borderRadius: 25
   },
+  textContainer: {
+    flex:1,
+    alignItems:'flex-start',
+    justifyContent:'center',
+  },
   owner: {
     fontSize: 14,
     paddingTop: 5,
     paddingBottom: 5,
-    width: '80%' //FIXME
   },
   restaurant: {
     fontSize: 20,
