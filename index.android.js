@@ -13,14 +13,4 @@ const uaifood = StackNavigator({
 	OrderDetails: { screen: OrderDetails }
 });
 
-const uaifoodTab = TabNavigator({
-  OrderList: { screen: OrderList, },
-  OrderDetails: { screen: OrderDetails, },
-}, {
-  tabBarOptions: {
-    activeTintColor: '#e91e63',
-  },
-});
-
 AppRegistry.registerComponent('uaifood', () => uaifood);
-AppRegistry.registerComponent('uaifoodTab', () => uaifoodTab);
