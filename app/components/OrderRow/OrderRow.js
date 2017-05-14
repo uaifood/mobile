@@ -14,7 +14,7 @@ export default class OrderRow extends Component {
       <View style={styles.row}>
         <Image
           style={styles.thumbnail}
-          source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+          source={{uri: order.restaurantId.image}}
         />
         <View style={styles.textContainer}>
           <Text numberOfLines={1} ellipsizeMode= 'tail' style={styles.owner}>{order.by} está pedindo</Text>
