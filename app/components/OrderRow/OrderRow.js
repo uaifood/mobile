@@ -24,6 +24,7 @@ export default class OrderRow extends Component {
 		);
 	}
 }
+
 OrderRow.propTypes = {
 	order: PropTypes.shape({})
 };

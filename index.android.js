@@ -13,4 +13,4 @@ const uaifood = StackNavigator({
 	OrderDetails: { screen: OrderDetails }
 });
 
-AppRegistry.registerComponent('uaifood', () => uaifood);
+AppRegistry.registerComponent('uaifood', () => IndexAndroid);

@@ -1,26 +1,23 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import App from './app/components/App';
 import { AppRegistry } from 'react-native';
-import { StackNavigator, TabNavigator } from 'react-navigation';
-import OrderDetails from './app/components/OrderDetails/OrderDetails.js';
-import OrderList from './app/components/OrderList/OrderList.js';
+import React, {Component} from 'react';
 
-const uaifood = StackNavigator({
-	OrderList: { screen: OrderList },
-	OrderDetails: { screen: OrderDetails }
-});
+class IndexIos extends Component {
+  static navigationOptions = {
+    title: 'uaiFood (BH)',
+    headerTitleStyle: {
+      color: '#fff',
+    },
+    headerStyle: {
+      backgroundColor: '#ec635f'
+    },
+  };
 
-const uaifoodTab = TabNavigator({
-  OrderList: { screen: OrderList, },
-  OrderDetails: { screen: OrderDetails, },
-}, {
-  tabBarOptions: {
-    activeTintColor: '#e91e63',
-  },
-});
+  render() {
+    return (
+      <App/>
+    );
+  }
+}
 
-AppRegistry.registerComponent('uaifood', () => uaifood);
-AppRegistry.registerComponent('uaifoodTab', () => uaifoodTab);
+AppRegistry.registerComponent('uaifood', () => IndexIos);

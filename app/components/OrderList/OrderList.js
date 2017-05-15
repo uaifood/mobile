@@ -6,13 +6,12 @@ import {
   TouchableOpacity,
   StyleSheet
 } from 'react-native';
-// import { StackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
 import PropTypes from 'prop-types';
 import OrderRow from '../OrderRow/OrderRow';
 import LoadingList from '../LoadingList/LoadingList';
 import { OrderListStyle } from './OrderList.style';
-import TabBar from '../TabBar/TabBar';
 import OrderDetails from '../OrderDetails/OrderDetails.js';
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -21,8 +20,11 @@ export default class OrderList extends Component {
 	static navigationOptions = {
 		header: null
 	};
-	constructor(props) {
-		super(props);
+
+  constructor(props) {
+    super(props);
+
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
 		this.state = {
 			dataSource: ds.cloneWithRows([]),
