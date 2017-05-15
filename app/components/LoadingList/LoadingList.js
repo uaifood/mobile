@@ -4,7 +4,7 @@ import {
   View,
   ListView
 } from 'react-native';
-import LoadingOrderRow from './LoadingOrderRow';
+import LoadingOrderRow from '../LoadingOrderRow/LoadingOrderRow';
 
 export default class LoadingList extends Component {
   constructor(props) {

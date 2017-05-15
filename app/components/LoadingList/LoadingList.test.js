@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import LoadingList from '../../../app/components/LoadingList/LoadingList';
+import LoadingList from './LoadingList';
 
 import renderer from 'react-test-renderer';
 

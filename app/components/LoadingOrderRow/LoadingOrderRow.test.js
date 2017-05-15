@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import LoadingOrderRow from '../../../app/components/LoadingOrderRow/LoadingOrderRow';
+import LoadingOrderRow from './LoadingOrderRow';
 
 import renderer from 'react-test-renderer';
 
