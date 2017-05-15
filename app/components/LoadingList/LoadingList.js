@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   View,
   ListView
 } from 'react-native';
-import LoadingOrderRow from './LoadingOrderRow';
+import LoadingOrderRow from '../LoadingOrderRow/LoadingOrderRow';
+import {LoadingListStyle} from './LoadingList.style';
 
 export default class LoadingList extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class LoadingList extends Component {
 
   render() {
     return (
-      <View style={styles.row}>
+      <View style={LoadingListStyle.row}>
         <ListView scrollEnabled={false}
           dataSource={this.state.dataSource}
           renderRow={(teste) => <LoadingOrderRow />}
@@ -26,7 +26,3 @@ export default class LoadingList extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-
-});

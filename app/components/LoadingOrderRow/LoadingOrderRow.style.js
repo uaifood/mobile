@@ -1,29 +1,6 @@
-import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  Image,
-  View
-} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-export default class LoadingOrderRow extends Component {
-  render() {
-    return (
-      <View style={styles.row}>
-        <View style={styles.greyCircle}>
-
-        </View>
-        <View>
-              <View style={styles.greyLine}></View>
-              <View style={styles.greyLine}></View>
-              <View style={styles.greyLine}></View>
-        </View>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
+const LoadingOrderRowStyle = StyleSheet.create({
   row: {
     flex: 1,
     flexDirection: 'row',
@@ -56,3 +33,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   }
 });
+export {LoadingOrderRowStyle};
