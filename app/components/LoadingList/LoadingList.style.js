@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const LoadingListStyle = StyleSheet.create({});
 
-export {LoadingListStyle};
+export { LoadingListStyle };
