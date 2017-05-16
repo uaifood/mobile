@@ -33,7 +33,7 @@ OrderDetails.propTypes = {
 	navigation: PropTypes.shape({
 		state: PropTypes.shape({
 			params: PropTypes.shape({
-				order: PropTypes.string
+				order: PropTypes.shape({})
 			})
 		})
 	})
