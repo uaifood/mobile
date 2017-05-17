@@ -10,15 +10,14 @@ import { OrderDetailsStyle } from './OrderDetails.style';
 export default class OrderDetails extends Component {
 	static navigationOptions = ({ navigation }) => ({
 		title: navigation.state.params.order.by,
-    headerTitleStyle: {
-      color: '#fff',
-    },
-    headerStyle: {
-      backgroundColor: '#ec635f'
-    }
+		headerTitleStyle: {
+			color: '#fff'
+		},
+		headerStyle: {
+			backgroundColor: '#ec635f'
+		}
 	});
 	render() {
-    const { goBack } = this.props.navigation;
 
 		const { order } = this.props.navigation.state.params;
 		return (

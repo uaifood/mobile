@@ -14,17 +14,21 @@ import LoadingList from '../LoadingList/LoadingList';
 import { OrderListStyle } from './OrderList.style';
 import OrderDetails from '../OrderDetails/OrderDetails.js';
 
-const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
-export default class OrderList extends Component {
-	static navigationOptions = {
-		header: null
-	};
+class OrderList extends Component {
+  static navigationOptions = {
+    title: 'uaiFood (BH)',
+    headerTitleStyle: {
+      color: '#fff',
+    },
+    headerStyle: {
+      backgroundColor: '#ec635f'
+    },
+  };
 
   constructor(props) {
     super(props);
-
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
 		this.state = {
 			dataSource: ds.cloneWithRows([]),
@@ -80,39 +84,9 @@ OrderList.propTypes = {
 	})
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  header: {
-    width: '100%',
-    height: 64,
-    backgroundColor: '#fa8072'
-  },
-  bar: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#f0ffff',
-    textAlign: 'center',
-    margin: 30,
-  },
-  name: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  owner: {
-    textAlign: 'center',
-    color: '#333333',
-    fontSize: 20
-  },
-  loading: {
-    margin: 50
-  }
+const AppNavigation = StackNavigator({
+  OrderList: { screen: OrderList },
+  OrderDetails: { screen: OrderDetails }
 });
 
-AppRegistry.registerComponent('OrderList', () => OrderList);
+export default AppNavigation;

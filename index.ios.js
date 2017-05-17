@@ -1,21 +1,11 @@
 import App from './app/components/App';
-import { AppRegistry } from 'react-native';
 import React, {Component} from 'react';
+import { AppRegistry } from 'react-native';
 
 class IndexIos extends Component {
-  static navigationOptions = {
-    title: 'uaiFood (BH)',
-    headerTitleStyle: {
-      color: '#fff',
-    },
-    headerStyle: {
-      backgroundColor: '#ec635f'
-    },
-  };
-
   render() {
     return (
-      <App/>
+      <App device={'ios'}/>
     );
   }
 }

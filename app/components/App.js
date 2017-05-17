@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { AppRegistry, View, TabBarIOS } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-// import TabViewExample from './TabViewExample';
+import TabViewExample from './TabViewExample';
+
 import OrderDetails from './OrderDetails/OrderDetails';
 import OrderList from './OrderList/OrderList';
 import Icons from '../Utils/Icons.js';
@@ -12,21 +13,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      selectedTab: 'orderTab'
+      selectedTab: 'orderTab',
+      index: 0,
+      routes: [
+        { key: '1', title: 'First' },
+        { key: '2', title: 'Second' },
+      ],
     };
     this.onPress = this.onPress.bind(this);
     this.getView = this.getView.bind(this);
   }
-
-  static navigationOptions = {
-    title: 'uaiFood (BH)',
-    headerTitleStyle: {
-      color: '#fff',
-    },
-    headerStyle: {
-      backgroundColor: '#ec635f'
-    },
-  };
 
   onPress(tab) {
     this.setState({selectedTab: tab});
@@ -90,7 +86,6 @@ App.defaultProps = {
     profileTab: Icons.userIcon
   }
 }
-
 App.propTypes = {
   device: PropTypes.string.isRequired
 }
