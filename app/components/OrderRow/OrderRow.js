@@ -9,7 +9,7 @@ import { OrderRowStyle } from './OrderRow.style';
 
 export default class OrderRow extends Component {
 	render() {
-		const order = this.props.order;
+		const { order } = this.props;
 		return (
 			<View style={OrderRowStyle.row}>
 				<Image
@@ -24,6 +24,7 @@ export default class OrderRow extends Component {
 		);
 	}
 }
+
 OrderRow.propTypes = {
 	order: PropTypes.shape({})
 };

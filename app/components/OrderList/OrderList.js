@@ -1,26 +1,31 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   View,
   ListView,
-  TouchableHighlight
+  TouchableOpacity
 } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+
 import PropTypes from 'prop-types';
 import OrderRow from '../OrderRow/OrderRow';
 import LoadingList from '../LoadingList/LoadingList';
 import { OrderListStyle } from './OrderList.style';
+import OrderDetails from '../OrderDetails/OrderDetails.js';
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
-export default class OrderList extends Component {
+class OrderList extends Component {
 	static navigationOptions = {
-		header: null
+		title: 'uaiFood (BH)',
+		headerTitleStyle: {
+			color: '#fff',
+			alignSelf: 'center'
+		},
+		headerStyle: {
+			backgroundColor: '#ec635f'
+		}
 	};
+
 	constructor(props) {
 		super(props);
 
@@ -51,29 +56,37 @@ export default class OrderList extends Component {
 			);
 		} else {
 			return (
-				<View style={OrderListStyle.container}>
-					<ListView
-						dataSource={this.state.dataSource}
-						renderRow={(order) =>{
-							return (
-								<TouchableHighlight onPress={() => {
-									navigate('OrderDetails', { order: order });
-								}}
-								>
-									<View>
-										<OrderRow order={order} />
-									</View>
-								</TouchableHighlight>
-							);
-						}}
-					/>
+        <View style={OrderListStyle.container}>
+          <ListView
+	contentInset={{ bottom:49 }}
+	automaticallyAdjustContentInsets={false}
+	dataSource={this.state.dataSource}
+	renderRow={(order) =>
+               (<TouchableOpacity onPress={() => {
+	navigate('OrderDetails', { order: order });
+}}
+                >
+                <View>
+                  <OrderRow order={order} />
+                </View>
+               </TouchableOpacity>)
+            }
+          />
         </View>
 			);
 		}
 	}
 }
+
 OrderList.propTypes = {
 	navigation: PropTypes.shape({
 		navigate: PropTypes.func
 	})
 };
+
+const AppNavigation = StackNavigator({
+	OrderList: { screen: OrderList },
+	OrderDetails: { screen: OrderDetails }
+});
+
+export default AppNavigation;
