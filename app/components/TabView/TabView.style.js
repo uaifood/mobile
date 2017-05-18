@@ -21,11 +21,11 @@ const TabViewStyle = StyleSheet.create({
 	indicator: {
 		backgroundColor: '#ffeb3b'
 	},
-  label: {
-	color: '#E8655C',
-	fontSize: 9,
-	fontWeight: '700'
-}
+	label: {
+		color: '#E8655C',
+		fontSize: 9,
+		fontWeight: '700'
+	}
 });
 
 export { TabViewStyle };

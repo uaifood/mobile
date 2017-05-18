@@ -5,7 +5,7 @@ import { AppRegistry } from 'react-native';
 class IndexIos extends Component {
 	render() {
 		return (
-      <App device={'ios'}/>
+      <App/>
 		);
 	}
 }

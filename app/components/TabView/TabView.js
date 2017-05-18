@@ -1,13 +1,20 @@
 import React, { PureComponent } from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
 import OrderList from '../OrderList/OrderList';
 import { TabViewStyle } from './TabView.style';
+const Icons = [
+	require('../../resources/images/list_hover.png'),
+	require('../../resources/images/add_hover.png'),
+	require('../../resources/images/bell_hover.png'),
+	require('../../resources/images/user_hover.png')
+];
+const Grey = '#673ab7';
 
 const FirstRoute = () => <OrderList />;
-const SecondRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: '#673ab7' } ]} />;
-const ThirdRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: '#673ab7' } ]} />;
-const FourthRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: '#673ab7' } ]} />;
+const SecondRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: Grey } ]} />;
+const ThirdRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: Grey } ]} />;
+const FourthRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: Grey } ]} />;
 const sceneMap = SceneMap({
 	1: FirstRoute,
 	2: SecondRoute,
@@ -22,10 +29,10 @@ export default class TabView extends PureComponent {
 		this.state = {
 			index: 0,
 			routes: [
-        { key: '1', title: 'PEDIDOS', icon: '../../resources/images/list_hover.png' },
-        { key: '2', title: 'ADICIONAR', icon: '../../resources/images/add_hover.png'  },
-        { key: '3', title: 'RESTAURANTES', icon: '../../resources/images/bell_hover.png'  },
-        { key: '4', title: 'PERFIL', icon: '../../resources/images/user_hover.png'  }
+        { key: '1', title: 'PEDIDOS', icon: Icons[0] },
+        { key: '2', title: 'ADICIONAR', icon: Icons[1] },
+        { key: '3', title: 'RESTAURANTES', icon: Icons[2] },
+        { key: '4', title: 'PERFIL', icon: Icons[3] }
 			]
 		};
 		this.handleChangeTab = this.handleChangeTab.bind(this);
@@ -36,9 +43,8 @@ export default class TabView extends PureComponent {
 		this.setState({ index });
 	}
 
-	renderIcon(route) {
-		console.log(route.icon);
-		return <Image style={TabViewStyle.icons} source={require('../../resources/images/add_hover.png')}/>;
+	renderIcon({ route }) {
+		return (<Image style={TabViewStyle.icons} source={route.icon}/>);
 	}
 
 	renderFooter(props) {
