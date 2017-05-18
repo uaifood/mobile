@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   View,
   ListView,
-  TouchableOpacity,
-  StyleSheet
+  TouchableOpacity
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
@@ -14,21 +12,22 @@ import LoadingList from '../LoadingList/LoadingList';
 import { OrderListStyle } from './OrderList.style';
 import OrderDetails from '../OrderDetails/OrderDetails.js';
 
-const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
 class OrderList extends Component {
-  static navigationOptions = {
-    title: 'uaiFood (BH)',
-    headerTitleStyle: {
-      color: '#fff',
-    },
-    headerStyle: {
-      backgroundColor: '#ec635f'
-    },
-  };
+	static navigationOptions = {
+		title: 'uaiFood (BH)',
+		headerTitleStyle: {
+			color: '#fff',
+			alignSelf: 'center'
+		},
+		headerStyle: {
+			backgroundColor: '#ec635f'
+		}
+	};
 
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			dataSource: ds.cloneWithRows([]),
@@ -59,17 +58,18 @@ class OrderList extends Component {
 			return (
         <View style={OrderListStyle.container}>
           <ListView
-            contentInset={{bottom:49}}
-            automaticallyAdjustContentInsets={false}
-            dataSource={this.state.dataSource}
-            renderRow={(order) =>
-               <TouchableOpacity onPress={() => {
-                 navigate('OrderDetails', { order: order })
-               }}>
+	contentInset={{ bottom:49 }}
+	automaticallyAdjustContentInsets={false}
+	dataSource={this.state.dataSource}
+	renderRow={(order) =>
+               (<TouchableOpacity onPress={() => {
+	navigate('OrderDetails', { order: order });
+}}
+                >
                 <View>
                   <OrderRow order={order} />
                 </View>
-               </TouchableOpacity>
+               </TouchableOpacity>)
             }
           />
         </View>
@@ -85,8 +85,8 @@ OrderList.propTypes = {
 };
 
 const AppNavigation = StackNavigator({
-  OrderList: { screen: OrderList },
-  OrderDetails: { screen: OrderDetails }
+	OrderList: { screen: OrderList },
+	OrderDetails: { screen: OrderDetails }
 });
 
 export default AppNavigation;
