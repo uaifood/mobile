@@ -5,7 +5,7 @@ import React from 'react';
 import OrderDetails from './OrderDetails';
 import Navigation from '../../test_utils/factories/Navigation.factory';
 
-test('renders a collection of grey Views', () => {
+test('renders an order details component', () => {
 	const orderDetails = shallow(<OrderDetails navigation={Navigation} />);
 	expect(orderDetails.length).toBe(1);
 	expect(orderDetails.find(View).length).toBe(2);
