@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   View,
   ListView,
-  TouchableOpacity
+  TouchableWithoutFeedback,
+	RefreshControl
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
@@ -31,7 +32,8 @@ class OrderList extends Component {
 
 		this.state = {
 			dataSource: ds.cloneWithRows([]),
-			isLoading: true
+			isLoading: true,
+			refreshing: false
 		};
 	}
 
@@ -62,15 +64,21 @@ class OrderList extends Component {
 	automaticallyAdjustContentInsets={false}
 	dataSource={this.state.dataSource}
 	renderRow={(order) =>
-               (<TouchableOpacity onPress={() => {
+               (<TouchableWithoutFeedback onPress={() => {
 	navigate('OrderDetails', { order: order });
 }}
                 >
                 <View>
                   <OrderRow order={order} />
                 </View>
-               </TouchableOpacity>)
+               </TouchableWithoutFeedback>)
             }
+	refreshControl={
+		<RefreshControl
+			refreshing={this.state.refreshing}
+			onRefresh={this.componentWillMount()}
+		/>
+	}
           />
         </View>
 			);
