@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
-
-const LightGrey = '#EEE';
-const MediumGrey = '#D8D8D8';
+import { LightGrey, MediumGrey } from '../../utils/Colors.style';
 
 const LoadingOrderRowStyle = StyleSheet.create({
 	row: {

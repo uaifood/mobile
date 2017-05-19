@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
-const ColorOne = '#fa8072';
-const ColorTwo = '#f0ffff';
-const ColorThree = '#333333';
+import { Salmon, LightBlue, DarkGrey } from '../../utils/Colors.style';
+
 const OrderListStyle = StyleSheet.create({
 	container: {
 		flex: 1,
@@ -12,14 +11,14 @@ const OrderListStyle = StyleSheet.create({
 	header: {
 		width: '100%',
 		height: 65,
-		backgroundColor: ColorOne
+		backgroundColor: Salmon
 	},
 	bar: {
 		justifyContent: 'center',
 		alignItems: 'center',
 		fontSize: 18,
 		fontWeight: 'bold',
-		color: ColorTwo,
+		color: LightBlue,
 		textAlign: 'center',
 		margin: 30
 	},
@@ -30,7 +29,7 @@ const OrderListStyle = StyleSheet.create({
 	},
 	owner: {
 		textAlign: 'center',
-		color: ColorThree,
+		color: DarkGrey,
 		fontSize: 20
 	},
 	loading: {

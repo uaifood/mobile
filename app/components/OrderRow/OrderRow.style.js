@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
-const Grey = '#EEE';
+import { LightGrey } from '../../utils/Colors.style';
 const OrderRowStyle = StyleSheet.create({
 	row: {
 		flex: 1,
 		flexDirection: 'row',
 		padding: 10,
 		borderBottomWidth: 1,
-		borderBottomColor: Grey,
+		borderBottomColor: LightGrey,
 		width: '100%'
 	},
 	thumbnail: {

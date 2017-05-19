@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
-
-const LightGrey = '#EEE';
+import { LightGrey } from '../../utils/Colors.style';
 
 const OrderDetailsStyle = StyleSheet.create({
 	row: {
