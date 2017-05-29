@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
 import OrderList from './OrderList/OrderList';
-import { TabViewStyle } from './TabView/TabView.style';
+import { AppStyle } from './App.style';
 import { Yellow, Purple, LightBlue } from '../utils/Colors.style';
 
 const FirstRoute = () => <OrderList />;
-const SecondRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: Purple } ]} />;
-const ThirdRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: Yellow } ]} />;
-const FourthRoute = () => <View style={[ TabViewStyle.container, { backgroundColor: LightBlue } ]} />;
+const SecondRoute = () => <View style={[ AppStyle.container, { backgroundColor: Purple } ]} />;
+const ThirdRoute = () => <View style={[ AppStyle.container, { backgroundColor: Yellow } ]} />;
+const FourthRoute = () => <View style={[ AppStyle.container, { backgroundColor: LightBlue } ]} />;
 const sceneMap = SceneMap({
 	1: FirstRoute,
 	2: SecondRoute,
@@ -32,7 +32,7 @@ class App extends Component {
 	}
 
 	renderIcon({ route }) {
-		return (<Image style={TabViewStyle.icons} source={route.icon}/>);
+		return (<Image style={AppStyle.icons} source={route.icon}/>);
 	}
 
 	renderFooter(props) {
@@ -40,10 +40,10 @@ class App extends Component {
 			<TabBar
 				renderIcon={this.renderIcon}
 				renderBadge={this.renderBadge}
-				indicatorStyle={TabViewStyle.indicator}
-				style={TabViewStyle.tabbar}
-				tabStyle={TabViewStyle.tab}
-				labelStyle={TabViewStyle.label}
+				indicatorStyle={AppStyle.indicator}
+				style={AppStyle.tabbar}
+				tabStyle={AppStyle.tab}
+				labelStyle={AppStyle.label}
 				{...props}
 			/>
 		);
@@ -53,7 +53,7 @@ class App extends Component {
 		const navigationState = { ...this.state, ...this.props };
 		return (
 			<TabViewAnimated
-				style={TabViewStyle.container}
+				style={AppStyle.container}
 				navigationState={navigationState}
 				renderScene={sceneMap}
 				renderFooter={this.renderFooter}

@@ -8,6 +8,7 @@ const DarkGrey = '#333333';
 const Yellow = '#ffeb3b';
 const LightRed = '#E8655C';
 const Purple = '#673ab7';
+const Transparent  = 'transparent';
 
 export {
 	White,
@@ -19,5 +20,6 @@ export {
 	DarkGrey,
 	Yellow,
 	LightRed,
-	Purple
+	Purple,
+	Transparent
 };
