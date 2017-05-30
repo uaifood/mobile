@@ -1,31 +1,27 @@
 import { StyleSheet } from 'react-native';
-import { LightRed, Transparent, Yellow, White } from '../utils/Colors.style';
+import { Transparent, White } from '../utils/Colors.style';
 
 const AppStyle = StyleSheet.create({
 	container: {
 		flex: 1
 	},
 	icons: {
-		width: 24,
-		height: 24
+		width: 20,
+		height: 20
+	},
+	iconPlus: {
+		width: 36,
+		height: 36
 	},
 	tabbar: {
 		backgroundColor: White
 	},
 	tab: {
-		height: 49
-	},
-	icon: {
-		backgroundColor: Transparent,
-		color: LightRed
+		height: 49,
+		opacity: 1
 	},
 	indicator: {
-		backgroundColor: Yellow
-	},
-	label: {
-		color: LightRed,
-		fontSize: 9,
-		fontWeight: '700'
+		backgroundColor: Transparent
 	}
 });
 
