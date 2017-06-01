@@ -29,7 +29,7 @@
       "react/no-is-mounted": 2,
       "jsx-quotes": 1,
       "no-unused-vars": [2, { "vars": "all", "args": "after-used" }],
-      "global-require": 2,
+      "global-require": 0,
       "no-console": 1,
       "no-underscore-dangle": [1],
       "quote-props": [2, "as-needed"],
