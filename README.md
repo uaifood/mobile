@@ -1,4 +1,4 @@
-https://www.bitrise.io/app/ce10dbb6667f0d1a/status.svg?token=2VnG0D4gevqF_I8k6LRL8g&branch=master
+![Build status](https://www.bitrise.io/app/ce10dbb6667f0d1a/status.svg?token=2VnG0D4gevqF_I8k6LRL8g&branch=master)
 
 # Setting up Android
 
