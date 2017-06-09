@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
-import OrderList from './OrderList/OrderList';
+import OrderListContainer from '../containers/OrderListContainer';
 import { AppStyle } from './App.style';
 import { Yellow, Purple } from '../utils/Colors.style';
 
-const FirstRoute = () => <OrderList />;
+const FirstRoute = () => <OrderListContainer />;
 const SecondRoute = () => <View style={[ AppStyle.container, { backgroundColor: Purple } ]} />;
 const ThirdRoute = () => <View style={[ AppStyle.container, { backgroundColor: Yellow } ]} />;
 const sceneMap = SceneMap({

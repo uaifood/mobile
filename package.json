@@ -6,34 +6,41 @@
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"test": "jest",
 		"ios": "react-native run-ios",
-		"android": "react-native run-android"
+		"android": "react-native run-android",
+		"lint": "node ./scripts/eslint.js"
 	},
 	"dependencies": {
+		"flux": "^3.1.2",
 		"react": "15.4.2",
 		"react-native": "0.42.3",
-		"react-native-tab-view": "latest",
-		"react-navigation": "latest"
+		"react-native-tab-view": "^0.0.66",
+		"react-navigation": "^1.0.0-beta.11",
+		"underscore": "^1.8.3"
 	},
 	"devDependencies": {
-		"eslint": "latest",
-		"eslint-loader": "latest",
-		"eslint-plugin-flowtype": "latest",
-		"eslint-plugin-import": "latest",
-		"eslint-plugin-jsx-a11y": "latest",
-		"eslint-config-rackt": "latest",
-    "eslint-plugin-compat": "latest",
-		"eslint-plugin-react": "latest",
-		"eslint-plugin-react-native": "latest",
-		"babel-eslint": "latest",
-		"babel-jest": "19.0.0",
-		"babel-preset-react-native": "1.9.1",
-		"jest": "19.0.2",
+		"babel-eslint": "^7.2.2",
+		"babel-jest": "^19.0.0",
+		"babel-preset-react-native": "^1.9.1",
+		"enzyme": "^2.8.2",
+		"eslint": "^3.19.0",
+		"eslint-loader": "^1.7.1",
+		"eslint-plugin-flowtype": "^2.34.0",
+		"eslint-plugin-import": "^2.3.0",
+		"eslint-plugin-jsx-a11y": "^5.0.3",
+		"eslint-config-rackt": "^1.1.1",
+    "eslint-plugin-compat": "^1.0.3",
+		"eslint-plugin-react": "^7.0.1",
+		"eslint-plugin-react-native": "^2.3.2",
+		"jest": "^20.0.4",
 		"react-test-renderer": "15.4.2",
-		"enzyme": "2.8.2",
 		"react-dom": "15.4.2",
 		"react-addons-test-utils": "15.4.2"
 	},
 	"jest": {
-		"preset": "react-native"
+		"preset": "react-native",
+		"setupFiles": ["<rootDir>/scripts/jestSetup.js"],
+		"transformIgnorePatterns": [
+			"node_modules/(?!(jest-)?react-native|react-navigation)"
+		]
 	}
 }
