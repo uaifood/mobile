@@ -4,11 +4,10 @@
 // with the new application state.
 import OrderList from '../components/order-list/OrderList';
 import { Container } from 'flux/utils';
-import OrdersStore from '../stores/OrdersStore';
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
 import OrderDetails from '../components/order-details/OrderDetails';
-import { getOrders } from '../actions/OrdersActionCreator';
+import OrdersStore, { getOrders } from '../modules/OrdersModule';
 
 class OrderListContainer extends Component {
 	static navigationOptions = {

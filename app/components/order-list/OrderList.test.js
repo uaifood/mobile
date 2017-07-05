@@ -6,9 +6,9 @@ import OrderList from './OrderList';
 import Navigation from '../../test-utils/factories/Navigation.factory';
 import Order from '../../test-utils/factories/Order.factory';
 import LoadingList from '../loading-list/LoadingList';
-import { getOrders } from '../../actions/OrdersActionCreator';
+import { getOrders } from '../../modules/OrdersModule';
 
-jest.mock('../../actions/OrdersActionCreator.js');
+jest.mock('../../modules/OrdersModule');
 
 function renderOrderListComponent(orders, navigation, fetching) {
 	return shallow(

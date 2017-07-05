@@ -1,5 +1,10 @@
-import OrdersStore from './OrdersStore';
-import ActionTypes from '../utils/constants/ActionTypes';
+// TODO: Read a bit more about how to test async actions. =)
+import 'react-native';
+import OrdersStore, {
+  FETCH_ORDERS,
+  ORDERS_RECEIVED,
+  FETCHING_SERVER_ERROR
+} from './OrdersModule';
 import Order from '../test-utils/factories/Order.factory';
 
 const orders = [ Order ];
@@ -7,7 +12,7 @@ const orders = [ Order ];
 describe('Orders store', () => {
 	it('should be fetching orders', () => {
 		const action = {
-			type: ActionTypes.fetchingOrders
+			type: FETCH_ORDERS
 		};
 		const state = OrdersStore.reduce([], action);
 		expect(state).toEqual({ fetching: true });
@@ -15,7 +20,7 @@ describe('Orders store', () => {
 
 	it('should update store state', () => {
 		const action = {
-			type: ActionTypes.ordersReceived,
+			type: ORDERS_RECEIVED,
 			orders
 		};
 		const state = OrdersStore.reduce([], action);
@@ -25,7 +30,7 @@ describe('Orders store', () => {
 
 	it('should return the current state on error', () => {
 		const action = {
-			type: ActionTypes.fetchingServerError
+			type: FETCHING_SERVER_ERROR
 		};
 		const currentState = [ orders ];
 		const state = OrdersStore.reduce(currentState, action);
@@ -33,4 +38,13 @@ describe('Orders store', () => {
 		expect(state).not.toEqual([]);
 	});
 
+});
+
+
+describe('Orders actions', () => {
+	test('get orders', () => {
+	});
+
+	test('refresh orders', () => {
+	});
 });

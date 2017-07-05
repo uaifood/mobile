@@ -4,7 +4,7 @@ import React from 'react';
 import OrderListContainer from './OrderListContainer';
 import Navigation from '../test-utils/factories/Navigation.factory';
 
-jest.mock('../actions/OrdersActionCreator.js');
+jest.mock('../modules/OrdersModule');
 
 test('renders order list container', () => {
 	const orderListContainer = shallow(<OrderListContainer navigation={Navigation} />);
