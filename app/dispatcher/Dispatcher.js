@@ -3,4 +3,17 @@
 // components (views) and trigger the action type that will
 // be received for one or more stores.
 import { Dispatcher } from 'flux';
-export default new Dispatcher();
+class UaiFoodDispatcher extends Dispatcher {
+	dispatchAction(type, data = {}) {
+		this.dispatch({
+			type,
+			...data
+		});
+	}
+}
+
+const dispatcher = new UaiFoodDispatcher();
+
+export const dispatchAction = dispatcher.dispatchAction.bind(dispatcher);
+
+export default dispatcher;

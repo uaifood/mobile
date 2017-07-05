@@ -1,7 +1,7 @@
 // TODO: Read a bit more about how to test async actions. =)
 import 'react-native';
 import OrdersStore, {
-  FETCH_ORDERS,
+  FETCHING_ORDERS,
   ORDERS_RECEIVED,
   FETCHING_SERVER_ERROR
 } from './OrdersModule';
@@ -12,7 +12,7 @@ const orders = [ Order ];
 describe('Orders store', () => {
 	it('should be fetching orders', () => {
 		const action = {
-			type: FETCH_ORDERS
+			type: FETCHING_ORDERS
 		};
 		const state = OrdersStore.reduce([], action);
 		expect(state).toEqual({ fetching: true });
