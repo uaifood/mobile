@@ -3,7 +3,7 @@ import {
   View,
   ListView
 } from 'react-native';
-import LoadingOrderRow from '../LoadingOrderRow/LoadingOrderRow';
+import LoadingOrderRow from '../loading-order-row/LoadingOrderRow';
 import { LoadingListStyle } from './LoadingList.style';
 
 export default class LoadingList extends Component {
