@@ -44,7 +44,7 @@ class OrderList extends Component {
 						contentInset={{ bottom:49 }}
 						automaticallyAdjustContentInsets={false}
 						dataSource={dataSource}
-						renderRow={(order) =>
+						renderRow={order =>
 							(<TouchableWithoutFeedback onPress={() => {
 								navigate('OrderDetails', { order: order });
 							}}
